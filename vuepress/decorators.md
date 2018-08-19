@@ -5,7 +5,7 @@
 * Component
 
 --- 
-#### NgModule
+## NgModule
 Нужен для обозначения какие директивы будут использоваться, что импорититься и так далее
 
 ```ts
@@ -41,7 +41,7 @@ import { NgModule} from '@angular/core';
 export class AppModule { }
 ```
 
-#### Injectable
+## Injectable
 
 Как только класс становиться Injectable его надо объявить в массиве providers: [..] в app.module.ts
 
@@ -61,7 +61,7 @@ class NeedsService {
 
 
 
-#### Component
+## Component
 ```ts
 // Component - используеться для описания компонента. Связыватет styles, model(ts), view(html) вместе
 import { Component } from '@angular/core';

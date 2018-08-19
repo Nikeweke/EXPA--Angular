@@ -1,11 +1,11 @@
 # Animation
 
-##### Install
+## Install
 ```batch
 npm i @angular/animations@latest --save
 ```
 
-##### Import to `app.module.ts`
+## Import to `app.module.ts`
 
 ```ts
 import { BrowserAnimationsModule }   from '@angular/platform-browser/animations';   
@@ -18,7 +18,7 @@ imports:[BrowserAnimationsModule]
 
 ```
 
-##### Import into component
+## Import into component
 ```ts
 import { Component, OnInit } from '@angular/core';
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
@@ -42,5 +42,5 @@ animations: [
 })
 ```
 
-##### Using it on template
+## Using it on template
 

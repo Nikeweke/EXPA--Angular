@@ -1,12 +1,12 @@
 # Services
 
-#### Generate service
+## Generate service
 ```batch
 ng generate service logging
 ng g s logging
 ```
 
-#### Write method in service for a test
+## Write method in service for a test
 ```ts
 import { Injectable } from '@angular/core';
 
@@ -22,7 +22,7 @@ export class LoggingService {
 }
 ```
 
-#### Import in the component (Locally)
+## Import in the component (Locally)
 ```ts
 import { LoggingService }     from '../services/logging/logging.service';
 ...
@@ -42,7 +42,7 @@ ngOnInit(){
 }
 ```
 
-#### Import in the component (Globally), can work as Store
+## Import in the component (Globally), can work as Store
 ```ts
 // app.module.ts
 import { LoggingService }     from './services/logging/logging.service';

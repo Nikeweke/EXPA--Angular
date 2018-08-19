@@ -12,13 +12,13 @@
 
 ---
 
-##### Вывод переменной
+## Вывод переменной
 ```html
 <p>{{variable}}</p>
 
 ```
 
-##### Подстановка в свойства элемента
+## Подстановка в свойства элемента
 ```html
 <form class="" action="index.html" method="post">
     <input type="text" name="name" value="{{sometext}}" /> <!-- С помощью {{var}} -->
@@ -27,7 +27,7 @@
 </form>
 ```
 
-##### NgModel
+## NgModel
 1) Сначало надо сделать импорт модуля в `app.module.ts`
 
 ```ts
@@ -44,7 +44,7 @@ import { FormsModule } from '@angular/forms';
 
 
 
-##### Events
+## Events
 ```html
 <button (click)="SayHello()" type="button" name="button">Say</button>  <!-- Запустит ф-цию из .ts файла SayHello() -->
 
@@ -53,7 +53,7 @@ import { FormsModule } from '@angular/forms';
 <input (keyup.enter)="onEnter()">
 ```
 
-##### Id for elements
+## Id for elements
 
 ```html
 <input #box (keyup.enter)="update(box.value)"   (blur)="update(box.value)">
@@ -84,7 +84,7 @@ import { FormsModule } from '@angular/forms';
 
 
 
-##### Hidden
+## Hidden
 Атрибут для элементов, который их прячет
 ```html
 <p> I am visible  </p>
@@ -95,7 +95,7 @@ import { FormsModule } from '@angular/forms';
 ```
 
 
-##### ngFor
+## ngFor
 ```html
 <p *ngFor="let toy of toys">
   {{ toy }}    

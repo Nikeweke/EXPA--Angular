@@ -1,6 +1,6 @@
 # Routing
 
-#### Create routing file
+## Create routing file
 ```ts
 // app.routing.ts
 import { Routes, RouterModule } from '@angular/router';
@@ -17,7 +17,7 @@ export const routing = RouterModule.forRoot(APP_ROUTES);
 ```
 
 
-#### Import in app.module
+## Import in app.module
 ```ts
 // app.module.ts
 ...
@@ -44,13 +44,13 @@ routing
 })
 ```
 
-#### Prepare place for out in app outlet component
+## Prepare place for out in app outlet component
 ```ts
 // app.component.ts
 <router-outlet></router-outlet>
 ```
 
-#### RouterLink
+## RouterLink
 ```html
 <a [routerLink]="['']"> some href </a> <!-- heads to '/' route -->
 <a [routerLink]="['article']"> some href </a> <!-- heads to '/article' route -->

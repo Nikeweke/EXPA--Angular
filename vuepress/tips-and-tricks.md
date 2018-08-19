@@ -1,6 +1,6 @@
 # Tips & Tricks
 
-#### Изменить порт запуска
+## Изменить порт запуска
 ###### .angular-cli.json
 ```json
 ...
@@ -13,12 +13,12 @@ defaults": {
 ```
 
 
-#### Сделать build проекта без hash в билдах
+## Сделать build проекта без hash в билдах
 ```
 ng build --prod --output-hashing none --build-optimizer false
 ```
 
-#### Можно передавать ссылку `#id` на обьект и управлять им из `.ts` файла
+## Можно передавать ссылку `#id` на обьект и управлять им из `.ts` файла
 ```html
 <button #btn_id (click)="ButtonClicker(btn_id)">Click me</button>
 ```

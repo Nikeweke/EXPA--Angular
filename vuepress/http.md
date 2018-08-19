@@ -1,6 +1,6 @@
 # Http
 
-#### Import
+## Import
 ```ts
 // app.module.ts
 import {HttpClientModule} from '@angular/common/http';
@@ -41,7 +41,7 @@ import {HttpClient} from '@angular/common/http';
 ```
 
 
-#### Set headers
+## Set headers
 ```ts
 import {HttpClient, HttpHeaders} from '@angular/common/http';;
 ...

@@ -1,6 +1,6 @@
 # Props
 
-##### @Input
+## @Input
 ```html
 <!-- app.component.html - передаем переменные в компонент из parent-компонента -->
 <app-article somevar="gg" [somevar1]="sommeevvaarr11" master="puppets"></app-article>
@@ -28,7 +28,7 @@ constructor(private http: HttpClient) { }
 ```
 
 
-##### @Output
+## @Output
 
 ```html
 <!-- app.component.html - мы обозначаем какую ф-цию слушать в компоненте "Article" -->
