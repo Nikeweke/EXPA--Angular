@@ -1,6 +1,6 @@
 # Angular project
 
-![](/assets/Angular structure.jpg)
+![A structure](../assets/Angular_structure1.png)
 
 #### Component`(src / app / home )`
 ```ts
