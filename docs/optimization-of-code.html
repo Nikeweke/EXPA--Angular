@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Optimization of code | Angular</title>
+    <meta name="description" content="Experience from angular world">
+    
+    
+    <link rel="preload" href="/EXPA--Angular/assets/css/0.styles.c1728fd6.css" as="style"><link rel="preload" href="/EXPA--Angular/assets/js/app.10e9e469.js" as="script"><link rel="preload" href="/EXPA--Angular/assets/js/11.7c3d34a3.js" as="script"><link rel="prefetch" href="/EXPA--Angular/assets/js/8.9abe1588.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/2.cda51ec0.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/3.db02b678.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/4.6bebd1e2.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/5.8745ce75.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/6.e8aeb40b.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/7.fa03e088.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/9.99070a90.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/10.99ed9ea0.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/12.56a4e1ea.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/13.bef8d492.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/14.58da1e06.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/15.c9f7d5f9.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/16.518f3ebf.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/17.a5a35a12.js">
+    <link rel="stylesheet" href="/EXPA--Angular/assets/css/0.styles.c1728fd6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/EXPA--Angular/" class="home-link router-link-active"><!----> <span class="site-name">Angular</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/EXPA--Angular/" class="nav-link">Home</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/EXPA--Angular/" class="nav-link">Home</a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading open"><span>Introduction</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/EXPA--Angular/intro/angular-cli.html" class="sidebar-link">Angular CLI</a></li><li><a href="/EXPA--Angular/intro/angular-project.html" class="sidebar-link">Angular project</a></li><li><a href="/EXPA--Angular/intro/typescript.html" class="sidebar-link">Typescript</a></li></ul></div></li><li><a href="/EXPA--Angular/optimization-of-code.html" class="active sidebar-link">Optimization of code</a></li><li><a href="/EXPA--Angular/templates-syntax.html" class="sidebar-link">Templates</a></li><li><a href="/EXPA--Angular/forms.html" class="sidebar-link">Forms</a></li><li><a href="/EXPA--Angular/http.html" class="sidebar-link">Http</a></li><li><a href="/EXPA--Angular/props-input-and-output.html" class="sidebar-link">Props</a></li><li><a href="/EXPA--Angular/services.html" class="sidebar-link">Services</a></li><li><a href="/EXPA--Angular/routing.html" class="sidebar-link">Routing</a></li><li><a href="/EXPA--Angular/decorators.html" class="sidebar-link">@Decorators</a></li><li><a href="/EXPA--Angular/animation.html" class="sidebar-link">Animation</a></li></ul> </div> <div class="page"> <div class="content"><h1 id="optimization-of-code"><a href="#optimization-of-code" aria-hidden="true" class="header-anchor">#</a> Optimization of code</h1> <h4 id="сдеnать-удобные-импорты-в-app-module-ts-сбор-в-одном-месте"><a href="#сдеnать-удобные-импорты-в-app-module-ts-сбор-в-одном-месте" aria-hidden="true" class="header-anchor">#</a> Сделать удобные импорты в app.module.ts (Сбор в одном месте)</h4> <p>Допустим у нас есть: <code>app / pages / home, article, login</code>, так мы подключаем их стандартно:</p> <h6 id="app-module-ts"><a href="#app-module-ts" aria-hidden="true" class="header-anchor">#</a> app.module.ts</h6> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// Pages components</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> HomeComponent<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./pages/home/home.component'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> ArticleComponent<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./pages/article/article.component'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> LoginComponent<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./pages/login/login.component'</span><span class="token punctuation">;</span>
+
+
+</code></pre></div><p>А вот так можно сделать, чтобы собрать их в одном месте:</p> <ol><li>Создаем файл <code>index.ts</code> в <code>app / pages /</code> и там делаем импорты</li></ol> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// app/pages/index.ts</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> HomeComponent<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./pages/home/home.component'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> ArticleComponent<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./pages/article/article.component'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> LoginComponent<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./pages/login/login.component'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// for 1 and 2 second import </span>
+<span class="token keyword">export</span> <span class="token punctuation">{</span> HomeComponent<span class="token punctuation">,</span> ArticleComponent<span class="token punctuation">,</span> LoginComponent <span class="token punctuation">}</span>
+
+<span class="token comment">// for 3 import</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span> HomeComponent<span class="token punctuation">,</span> ArticleComponent<span class="token punctuation">,</span> LoginComponent <span class="token punctuation">}</span>
+</code></pre></div><ol start="2"><li>в <code>app.module.ts</code> делаем импорт из <code>/ pages / index.ts</code></li></ol> <h6 id><a href="#" aria-hidden="true" class="header-anchor">#</a></h6> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// app.module.ts</span>
+
+<span class="token comment">// Import with destucturization (not allowed if only defined &quot;export default{}&quot;)</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> HomeComponent<span class="token punctuation">,</span> ArticleComponent<span class="token punctuation">,</span> LoginComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./pages/index'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// OR import with grouping </span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> pages <span class="token keyword">from</span> <span class="token string">'./pages/index'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// OR import object from default export</span>
+<span class="token keyword">import</span> pages <span class="token keyword">from</span> <span class="token string">'./pages/index'</span>
+
+@<span class="token function">NgModule</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  declarations<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    HomeComponent<span class="token punctuation">,</span> 
+    ArticleComponent<span class="token punctuation">,</span>
+    LoginComponent
+    
+    <span class="token comment">// OR if export * as</span>
+    pages<span class="token punctuation">.</span>HomeComponent<span class="token punctuation">,</span>
+    pages<span class="token punctuation">.</span>ArticleComponent<span class="token punctuation">,</span>
+    pages<span class="token punctuation">.</span>LoginComponent
+    
+    <span class="token comment">// OR if defined &quot;export default {}&quot; - make it with Spread</span>
+    <span class="token operator">...</span>pages <span class="token comment">// same as - HomeComponent, ArticleComponent, LoginComponent</span>
+
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+</code></pre></div><h4 id="сдеnать-принадnежность-компонента-к-странице-компоненту-nогически"><a href="#сдеnать-принадnежность-компонента-к-странице-компоненту-nогически" aria-hidden="true" class="header-anchor">#</a> Сделать &quot;принадлежность&quot; компонента к странице(компоненту), <code>логически</code></h4> <p>Допустим есть страница <code>app / pages / home</code>, и него есть компонент <code>card.component</code> который мы включаем в него и т.д. Но при импорте мы хотим импортить страницу <code>home</code> и компонент вместе, который используеться только в этой странице.</p> <h6 id="app-module-ts-2"><a href="#app-module-ts-2" aria-hidden="true" class="header-anchor">#</a> app.module.ts</h6> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// Обычный импорт</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> HomeComponent<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./pages/home/home.component'</span><span class="token punctuation">;</span> <span class="token comment">// &lt;!-- страница(компонент) в который включаеться &quot;CardComponent&quot;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> CardComponent<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./pages/components/card/card.component'</span><span class="token punctuation">;</span> <span class="token comment">// card component</span>
+<span class="token operator">...</span>
+declarations<span class="token punctuation">:</span> <span class="token punctuation">[</span>HomeComponent<span class="token punctuation">,</span> CardComponent<span class="token punctuation">]</span>
+</code></pre></div><p>Делаем по-другому</p> <h6 id="home-component-ts"><a href="#home-component-ts" aria-hidden="true" class="header-anchor">#</a> home.component.ts</h6> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// default class of component</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">HomeComponent</span> <span class="token punctuation">{</span>
+<span class="token operator">...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// changed to this</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> CardComponent<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./components/card/card.component'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">HomeComponent</span> <span class="token punctuation">{</span>
+<span class="token operator">...</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token punctuation">{</span>HomeComponent<span class="token punctuation">,</span> CardComponent<span class="token punctuation">}</span>
+
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/EXPA--Angular/intro/typescript.html" class="prev">
+          Typescript
+        </a></span> <span class="next"><a href="/EXPA--Angular/templates-syntax.html">
+          Templates
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/EXPA--Angular/assets/js/11.7c3d34a3.js" defer></script><script src="/EXPA--Angular/assets/js/app.10e9e469.js" defer></script>
+  </body>
+</html>

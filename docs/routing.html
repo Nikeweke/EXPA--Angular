@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Routing | Angular</title>
+    <meta name="description" content="Experience from angular world">
+    
+    
+    <link rel="preload" href="/EXPA--Angular/assets/css/0.styles.c1728fd6.css" as="style"><link rel="preload" href="/EXPA--Angular/assets/js/app.10e9e469.js" as="script"><link rel="preload" href="/EXPA--Angular/assets/js/14.58da1e06.js" as="script"><link rel="prefetch" href="/EXPA--Angular/assets/js/8.9abe1588.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/2.cda51ec0.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/3.db02b678.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/4.6bebd1e2.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/5.8745ce75.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/6.e8aeb40b.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/7.fa03e088.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/9.99070a90.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/10.99ed9ea0.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/11.7c3d34a3.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/12.56a4e1ea.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/13.bef8d492.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/15.c9f7d5f9.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/16.518f3ebf.js"><link rel="prefetch" href="/EXPA--Angular/assets/js/17.a5a35a12.js">
+    <link rel="stylesheet" href="/EXPA--Angular/assets/css/0.styles.c1728fd6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/EXPA--Angular/" class="home-link router-link-active"><!----> <span class="site-name">Angular</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/EXPA--Angular/" class="nav-link">Home</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/EXPA--Angular/" class="nav-link">Home</a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading open"><span>Introduction</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/EXPA--Angular/intro/angular-cli.html" class="sidebar-link">Angular CLI</a></li><li><a href="/EXPA--Angular/intro/angular-project.html" class="sidebar-link">Angular project</a></li><li><a href="/EXPA--Angular/intro/typescript.html" class="sidebar-link">Typescript</a></li></ul></div></li><li><a href="/EXPA--Angular/optimization-of-code.html" class="sidebar-link">Optimization of code</a></li><li><a href="/EXPA--Angular/templates-syntax.html" class="sidebar-link">Templates</a></li><li><a href="/EXPA--Angular/forms.html" class="sidebar-link">Forms</a></li><li><a href="/EXPA--Angular/http.html" class="sidebar-link">Http</a></li><li><a href="/EXPA--Angular/props-input-and-output.html" class="sidebar-link">Props</a></li><li><a href="/EXPA--Angular/services.html" class="sidebar-link">Services</a></li><li><a href="/EXPA--Angular/routing.html" class="active sidebar-link">Routing</a></li><li><a href="/EXPA--Angular/decorators.html" class="sidebar-link">@Decorators</a></li><li><a href="/EXPA--Angular/animation.html" class="sidebar-link">Animation</a></li></ul> </div> <div class="page"> <div class="content"><h1 id="routing"><a href="#routing" aria-hidden="true" class="header-anchor">#</a> Routing</h1> <h4 id="create-routing-file"><a href="#create-routing-file" aria-hidden="true" class="header-anchor">#</a> Create routing file</h4> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// app.routing.ts</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Routes<span class="token punctuation">,</span> RouterModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/router'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> HomeComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./components/home/home.component'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> ArticleComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./components/article/article.component'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token constant">APP_ROUTES</span><span class="token punctuation">:</span> Routes <span class="token operator">=</span> <span class="token punctuation">[</span>
+<span class="token punctuation">{</span>path<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span> component<span class="token punctuation">:</span> AppComponent<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span>path<span class="token punctuation">:</span> <span class="token string">'article'</span><span class="token punctuation">,</span> component<span class="token punctuation">:</span> ArticleComponent<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> routing <span class="token operator">=</span> RouterModule<span class="token punctuation">.</span><span class="token function">forRoot</span><span class="token punctuation">(</span><span class="token constant">APP_ROUTES</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="import-in-app-module"><a href="#import-in-app-module" aria-hidden="true" class="header-anchor">#</a> Import in app.module</h4> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// app.module.ts</span>
+<span class="token operator">...</span>
+
+<span class="token comment">// Bootstrap Outlet component</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> AppComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./components/app/app.component'</span><span class="token punctuation">;</span>
+<span class="token comment">// Components</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> HomeComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./components/home/home.component'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> ArticleComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./components/article/article.component'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// routing</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>routing<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./app.routing.ts'</span><span class="token punctuation">;</span>
+<span class="token operator">...</span>
+@<span class="token function">NgModule</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  declarations<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+   AppComponent<span class="token punctuation">,</span>
+   HomeComponent<span class="token punctuation">,</span>
+   ArticleComponent
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+imports<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+BrowserModule<span class="token punctuation">,</span>
+routing
+<span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h4 id="prepare-place-for-out-in-app-outlet-component"><a href="#prepare-place-for-out-in-app-outlet-component" aria-hidden="true" class="header-anchor">#</a> Prepare place for out in app outlet component</h4> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// app.component.ts</span>
+<span class="token operator">&lt;</span>router<span class="token operator">-</span>outlet<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>outlet<span class="token operator">&gt;</span>
+</code></pre></div><h4 id="routerlink"><a href="#routerlink" aria-hidden="true" class="header-anchor">#</a> RouterLink</h4> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">[routerLink]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>[<span class="token punctuation">'</span><span class="token punctuation">'</span>]<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span> some href <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!-- heads to '/' route --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">[routerLink]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>[<span class="token punctuation">'</span>article<span class="token punctuation">'</span>]<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span> some href <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!-- heads to '/article' route --&gt;</span>
+
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/EXPA--Angular/services.html" class="prev">
+          Services
+        </a></span> <span class="next"><a href="/EXPA--Angular/decorators.html">
+          @Decorators
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/EXPA--Angular/assets/js/14.58da1e06.js" defer></script><script src="/EXPA--Angular/assets/js/app.10e9e469.js" defer></script>
+  </body>
+</html>
