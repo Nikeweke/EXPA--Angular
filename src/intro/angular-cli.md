@@ -1,38 +1,32 @@
 # Angular CLI
 
-* Установка
-* Версия CLI
-* Создание проекта
-* Сделать билд без хешей в названиях билдов
-* Generate
+[[toc]]
 
 --- 
 
-#### Установка
+### Установка
 ```batch
 npm i @angular/cli -g 
 ```
 
-#### Версия CLI
+### Версия CLI
 ```batch
 ng -v
 ```
 
 
-#### Создание проекта
+### Создание проекта
 ```batch
 ng new angular_app
 ng new angular_app --styles=scss --routing
 ```
 
-#### Сделать `build` проекта без hash в билдах
+### Сделать `build` проекта без hash в билдах
 ```
 ng build --prod --output-hashing none --build-optimizer false
 ```
 
-
-
-#### Generate
+### Generate
 
 * class
 * component
@@ -56,7 +50,13 @@ ng generate component name_component --module app
  
 ```
 
-#### Change to scss
+### Подключение Sass
+Установит текущее приложение на scss
 ```
-ng new my-sassy-app --style=scss
+ng set defaults.styleExt scss
+```
+
+Сделать шаблон с scss
+```
+ng new Demo_Project --style=scss
 ```
